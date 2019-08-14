@@ -1,16 +1,76 @@
 @import "_normalize";
 @import "_variables";
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap&subset=latin-ext');
 
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
   color: $yellow;
   background: $violet;
+  font-family: Roboto;
+  font-weight: 500;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.button-add {
+  padding: 12px;
+  font-size: 18px;
+  margin: 48px 0 26px;
+}
+
+.button-remove {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.button-history {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.counter {
+  width: 280px;
+  height: 280px;
+  // background: url('../assets/img/water-glass.svg') center center;
+  // background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // color: #000;
+  font-size: 112px;
+
+  &__value {
+    display: block;
+    padding-top: 64px;
+  }
+}
+
+.header {
+  font-size: 55px;
+  // margin: 0 0 64px 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
