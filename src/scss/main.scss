@@ -43,7 +43,11 @@ body {
   border: none;
   color: #fff;
   padding: 12px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
   font-size: 14px;
+  z-index: 2;
 }
 
 .counter {
@@ -67,6 +71,27 @@ body {
   font-size: 55px;
   // margin: 0 0 64px 0;
   padding: 0;
+}
+
+.history {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: darkcyan;
+  display: none;
+
+  &__item {
+    list-style: none;
+    font-size: 2rem;
+  }
+
+  &--js-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .main {
