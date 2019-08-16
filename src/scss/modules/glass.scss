@@ -1,0 +1,39 @@
+.glass {
+
+    &__glass-svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__water-svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        clip-path: inset(84% 0 0 0 round 0);
+        transition: ease .5s;
+    }
+
+    &__water1-svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        // transform-origin: bottom;
+        transform: translateY(62%) scaleX(.82);
+        transition: ease .5s;
+    }
+
+    &__bubbles-svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
