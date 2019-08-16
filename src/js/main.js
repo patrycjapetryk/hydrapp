@@ -89,7 +89,7 @@ buttonHistory.addEventListener('click', (e) => {
       copy = 'szklanki';
     }
     if (key[0] == 2) {
-      list.innerHTML += `<li class="history__item">${key} / <span class="history__span">${value} ${copy} ${(value>7)?'👏'}</span></li>`;
+      list.innerHTML += `<li class="history__item">${key} / <span class="history__span">${value} ${copy} ${(value>7)?'👏':''}</span></li>`;
     };
   }
 });
