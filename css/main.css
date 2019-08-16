@@ -321,8 +321,8 @@ template {
   top: 0;
   width: 100%;
   height: 100%;
-  -webkit-clip-path: inset(84% 0 0 0 round 0);
-          clip-path: inset(84% 0 0 0 round 0);
+  -webkit-clip-path: inset(100% 0 0 0 round 0);
+          clip-path: inset(100% 0 0 0 round 0);
   -webkit-transition: ease .5s;
   -o-transition: ease .5s;
   transition: ease .5s; }
@@ -345,7 +345,11 @@ template {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: ease .5s;
+  -o-transition: ease .5s;
+  transition: ease .5s; }
 
 html {
   -webkit-box-sizing: border-box;
@@ -400,8 +404,8 @@ body {
   color: #29235c;
   padding: 12px;
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 20px;
+  right: 25px;
   font-size: 14px;
   z-index: 2; }
 
@@ -439,6 +443,9 @@ body {
     font-size: 1.3rem;
     color: #76c9db;
     line-height: 2em; }
+  .history__list {
+    padding: 0;
+    text-align: center; }
   .history__span {
     color: #29235c; }
   .history--js-active {
