@@ -14,7 +14,7 @@
         top: 0;
         width: 100%;
         height: 100%;
-        clip-path: inset(84% 0 0 0 round 0);
+        clip-path: inset(100% 0 0 0 round 0);
         transition: ease .5s;
     }
 
@@ -24,7 +24,6 @@
         top: 0;
         width: 100%;
         height: 100%;
-        // transform-origin: bottom;
         transform: translateY(62%) scaleX(.82);
         transition: ease .5s;
     }
@@ -35,5 +34,7 @@
         top: 0;
         width: 100%;
         height: 100%;
+        opacity: 0;
+        transition: ease .5s;
     }
 }
