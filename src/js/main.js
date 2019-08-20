@@ -66,7 +66,7 @@ howManyGlasses();
 buttonAdd.addEventListener('click', (e) => {
   localStorage.setItem(key, parseInt(localStorage.getItem(key)) + 1);
   value.innerHTML = localStorage.getItem(key);
-  howManyGlasses();
+  waterPosition();
 });
 
 buttonRemove.addEventListener('click', (e) => {
@@ -75,7 +75,7 @@ buttonRemove.addEventListener('click', (e) => {
     localStorage.setItem(key, localStorage.getItem(key) - 1);
     value.innerHTML = localStorage.getItem(key);
   }
-  howManyGlasses();
+  waterPosition();
 });
 
 buttonHistory.addEventListener('click', (e) => {
@@ -85,7 +85,6 @@ buttonHistory.addEventListener('click', (e) => {
     buttonHistory.innerHTML = 'powrót';
   } else {
     buttonHistory.innerHTML = 'historia';
-    howManyGlasses();
   }
 
   list.innerHTML = '';
