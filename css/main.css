@@ -384,7 +384,7 @@ body {
 .button-add {
   padding: 12px 22px;
   font-size: 17px;
-  margin: 48px 0 6px;
+  margin: 28px 0 6px;
   border: none;
   background-color: #76c9db;
   color: #fff;
@@ -431,11 +431,11 @@ body {
     color: #76c9db; }
 
 .history {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  min-height: 100%;
-  min-width: 100%;
+  right: 0;
+  bottom: 0;
   background-color: #d8ecf1;
   display: none; }
   .history__item {
