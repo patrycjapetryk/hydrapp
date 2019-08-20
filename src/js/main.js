@@ -27,14 +27,22 @@ const glassWaterTop = document.querySelector('.glass__water1-svg--js');
 const glassBubbles = document.querySelector('.glass__bubbles-svg--js');
 
 const glassesHistory = [];
+let key = new Date().toISOString().slice(0, 10);
 
-const key = new Date().toISOString().slice(0, 10);
+const howManyGlasses = () => {
+  key = new Date().toISOString().slice(0, 10);
 
-if (!localStorage.getItem(key)) {
-  localStorage.setItem(key, 0)
-  value.innerHTML = '0';
-} else {
-  value.innerHTML = localStorage.getItem(key);
+  if (!localStorage.getItem(key)) {
+    localStorage.setItem(key, 0)
+    value.innerHTML = '0';
+  } else {
+    value.innerHTML = localStorage.getItem(key);
+    waterPosition();
+  };
+
+  console.log(key);
+
+  setTimeout(howManyGlasses, 60000);
 };
 
 const waterPosition = () => {
@@ -53,12 +61,12 @@ const waterPosition = () => {
   }
 };
 
-waterPosition();
+howManyGlasses();
 
 buttonAdd.addEventListener('click', (e) => {
   localStorage.setItem(key, parseInt(localStorage.getItem(key)) + 1);
   value.innerHTML = localStorage.getItem(key);
-  waterPosition();
+  howManyGlasses();
 });
 
 buttonRemove.addEventListener('click', (e) => {
@@ -67,9 +75,8 @@ buttonRemove.addEventListener('click', (e) => {
     localStorage.setItem(key, localStorage.getItem(key) - 1);
     value.innerHTML = localStorage.getItem(key);
   }
-  waterPosition();
+  howManyGlasses();
 });
-
 
 buttonHistory.addEventListener('click', (e) => {
 
@@ -78,6 +85,7 @@ buttonHistory.addEventListener('click', (e) => {
     buttonHistory.innerHTML = 'powrót';
   } else {
     buttonHistory.innerHTML = 'historia';
+    howManyGlasses();
   }
 
   list.innerHTML = '';
