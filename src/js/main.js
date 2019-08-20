@@ -1,6 +1,6 @@
 "use strict";
 
-// service worker registration - remove if you're not going to use it
+// service worker registration 
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
@@ -14,18 +14,21 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// place your code below
+//
 
 const buttonAdd = document.querySelector('.button-add--js');
 const buttonRemove = document.querySelector('.button-remove--js');
 const buttonHistory = document.querySelector('.button-history--js');
 const value = document.querySelector('.counter__value--js');
-const key = new Date().toISOString().slice(0, 10);
 const history = document.querySelector('.history--js');
 const list = document.querySelector('.history__list--js');
 const glassWater = document.querySelector('.glass__water-svg--js');
 const glassWaterTop = document.querySelector('.glass__water1-svg--js');
 const glassBubbles = document.querySelector('.glass__bubbles-svg--js');
+
+const glassesHistory = [];
+
+const key = new Date().toISOString().slice(0, 10);
 
 if (!localStorage.getItem(key)) {
   localStorage.setItem(key, 0)
@@ -67,9 +70,9 @@ buttonRemove.addEventListener('click', (e) => {
   waterPosition();
 });
 
+
 buttonHistory.addEventListener('click', (e) => {
 
-  list.innerHTML = '';
   history.classList.toggle('history--js-active');
   if (history.classList.contains('history--js-active')) {
     buttonHistory.innerHTML = 'powrót';
@@ -77,19 +80,37 @@ buttonHistory.addEventListener('click', (e) => {
     buttonHistory.innerHTML = 'historia';
   }
 
+  list.innerHTML = '';
+  glassesHistory.length = 0;
+
   for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
+    if (localStorage.key(i)[0] == 2) {
+      glassesHistory[i] = {
+        key: localStorage.key(i),
+        value: localStorage.getItem(localStorage.key(i))
+      };
+    }
+  }
+
+  glassesHistory.sort((a, b) => {
+    if (a.key < b.key) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+
+  glassesHistory.forEach(item => {
+
     let copy;
-    if (value == 0 | value > 4) {
+    if (item.value == 0 | item.value > 4) {
       copy = 'szklanek';
-    } else if (value == 1) {
+    } else if (item.value == 1) {
       copy = 'szklanka';
     } else {
       copy = 'szklanki';
     }
-    if (key[0] == 2) {
-      list.innerHTML += `<li class="history__item">${key} / <span class="history__span">${value} ${copy} ${(value>7)?'👏':''}</span></li>`;
-    };
-  }
+
+    list.innerHTML += `<li class="history__item">${item.key} / <span class="history__span">${item.value} ${copy} ${(item.value>7)?'👏':''}</span></li>`;
+  });
 });
