@@ -59,7 +59,7 @@ const howManyGlasses = () => {
 
 const waterPosition = () => {
   if (localStorage.getItem(key) <= 8) {
-    glassWater.style.clipPath = `inset(${84 - (localStorage.getItem(key) * 8)}% 0 0 0 round 0)`;
+    glassWater.style.clipPath = `inset(${84 - (localStorage.getItem(key) * 8)}% 0 0 0)`;
     glassWaterTop.style.transform = `translateY(${62 - (localStorage.getItem(key) * 8)}%) scaleX(${.82 + localStorage.getItem(key)/40})`;
     if (localStorage.getItem(key) > 7) {
       glassBubbles.style.opacity = 1;
@@ -67,7 +67,7 @@ const waterPosition = () => {
       glassBubbles.style.opacity = 0;
     }
   } else {
-    glassWater.style.clipPath = 'inset(0 0 0 0 round 0)';
+    glassWater.style.clipPath = 'inset(0 0 0 0)';
     glassWaterTop.style.transform = 'translateY(-2%) scaleX(1.02)';
     glassBubbles.style.opacity = 1;
   }
