@@ -86,6 +86,8 @@ body {
   bottom: 0;
   background-color: $light-blue;
   display: none;
+  overflow: auto;
+  padding-top: 50px;
 
   &__item {
     list-style: none;
@@ -105,7 +107,7 @@ body {
 
   &--js-active {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
   }
 }
