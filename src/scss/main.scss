@@ -37,6 +37,7 @@ body {
   background-color: $blue;
   color: #fff;
   position: relative;
+  cursor: pointer;
 }
 
 .button-remove {
@@ -46,6 +47,7 @@ body {
   padding: 12px;
   font-size: 14px;
   position: relative;
+  cursor: pointer;
 }
 
 .button-history {
@@ -58,6 +60,7 @@ body {
   right: 25px;
   font-size: 14px;
   z-index: 2;
+  cursor: pointer;
 }
 
 .counter {
