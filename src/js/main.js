@@ -29,17 +29,19 @@ const glassBubbles = document.querySelector('.glass__bubbles-svg--js');
 const glassesHistory = [];
 let key;
 let minutes;
+const timeZoneOffset = new Date().getTimezoneOffset() * 60000; // timezone offset in milliseconds
 
 const minsToMidnight = () => {
-  let now = new Date();
+  const now = new Date();
   let then = new Date(now);
-  then.setHours(24, 0, 0, 0);
+  then.setHours(24, 1, 0, 0);
   minutes = then - now;
-  console.log(minutes);
+  // console.log(minutes);
 }
 
 const howManyGlasses = () => {
-  key = new Date().toISOString().slice(0, 10);
+
+  key = new Date(Date.now() - timeZoneOffset).toISOString().slice(0, 10);
   minsToMidnight();
 
   if (!localStorage.getItem(key)) {
@@ -47,10 +49,10 @@ const howManyGlasses = () => {
     value.innerHTML = '0';
   } else {
     value.innerHTML = localStorage.getItem(key);
-    waterPosition();
   };
 
-  console.log(key);
+  waterPosition();
+  // console.log(key);
 
   setTimeout(howManyGlasses, minutes);
 };
