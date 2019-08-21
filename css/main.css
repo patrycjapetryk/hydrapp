@@ -388,7 +388,8 @@ body {
   border: none;
   background-color: #76c9db;
   color: #fff;
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
 
 .button-remove {
   background: none;
@@ -396,7 +397,8 @@ body {
   color: #29235c;
   padding: 12px;
   font-size: 14px;
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
 
 .button-history {
   background: none;
@@ -407,7 +409,8 @@ body {
   top: 20px;
   right: 25px;
   font-size: 14px;
-  z-index: 2; }
+  z-index: 2;
+  cursor: pointer; }
 
 .counter {
   width: 340px;
