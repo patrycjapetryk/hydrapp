@@ -437,7 +437,9 @@ body {
   right: 0;
   bottom: 0;
   background-color: #d8ecf1;
-  display: none; }
+  display: none;
+  overflow: auto;
+  padding-top: 50px; }
   .history__item {
     list-style: none;
     font-size: 1.3rem;
@@ -452,9 +454,9 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
