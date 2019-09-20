@@ -10,7 +10,7 @@ This is my first PWA aplication ever 🔥.
 - SVG animation
   ...
 
-# built with gulp
+# Built with gulp
 
 `npm install -g gulp-cli`
 
@@ -19,4 +19,8 @@ This is my first PWA aplication ever 🔥.
 `gulp`
 
 To publish your page using github pages use `npm run deploy`
+
+##
+
+Online version: https://patrycjapetryk.github.io/hydrapp/
 
