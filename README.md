@@ -8,6 +8,7 @@ This is my first PWA aplication ever 🔥.
 - SASS
 - JS ES6
 - SVG animation
+- Local storage
   ...
 
 # Built with gulp
